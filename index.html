@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>きらぼしサイト</title>
+  <link rel="stylesheet" href="style.css">
+<!--フォントメガ丸-->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'vmj6bcq',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+
+</script>
+</head>
+
+<body>
+  <main class="character-wrapper">
+    <div class="character-container">
+      <img src="images/character.PNG" alt="キャラクター" class="character-img" />
+      <div class="caption-overlay">
+        <p class="caption rise-up">ものづくりとこの星がだいすき！</p>
+        <p class="caption2 rise-up">イラスト、音楽、MV、時にはお菓子作りなどなど…。宇宙からやってきたクリエイター、『きらぼし』のサイト。</p>
+      </div>
+    </div>
+  </main>
+  <!-- ロゴ -->
+  <div class="logo">
+    <img src="images/kiraboshi.logo.PNG" alt="きらぼしサイト">
+  </div>
+
+  <!-- クロスフェード動画（最新YouTube動画）-->
+  <div class="video-wrapper">
+
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/KQWNrEigWrM"
+        title="きらぼし動画"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-title">君のアイドル♡(31) / 重音テト</p>
+  </div>
+
+
+
+  <!-- menu -->
+<div id="menu-button">
+  <img src="images/menu-ShootingStar.PNG" alt="menu" class="hamburger"/>
+</div>
+
+<div id="menu-panel" class="menu-panel">
+  <a href="#illustration">イラスト</a>
+  <a href="#video">動画</a>
+  <a href="#cooking">お菓子作り</a>
+  <a href="#craft">ハンドメイド</a>
+</div>
+
+  <!-- SNSリンク -->
+<div class="sns-links">
+  <a href="https://x.com/kiraboshi_dayo?s=21&t=nBg6D8IdfzuOT_GNT5nRpw"><i class="fab fa-x-twitter"></i></a>
+  <a href="https://youtube.com/@kiraboshi_dayo?si=jPh7ESLiHBsn_Y8I"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.tiktok.com/〜"><i class="fab fa-tiktok"></i></a>
+  <a href="https://note.com/hao_hao_conoca"><span class="icon-combo">
+    <i class="fas fa-book-open"></i>
+    <i class="fas fa-pencil-alt pencil"></i>
+  </span></a>
+</div>
+
+<!-- お手紙アイコン -->
+<div class="request-toggle" onclick="toggleRequestLinks()">
+  <img id="letter" src="images/letter-for-you.PNG" alt="ご依頼" />
+</div>
+
+<!-- Skeb・ココナラだけ別に出す -->
+<div class="request-links hidden">
+
+  <a href="https://skeb.jp/@KIRABOSHI_dayo" class="repuest-button" target="_blank">
+    <div class="icon-area">
+      <i class="fas fa-palette"></i>
+    </div>
+    <div class="text-area">
+      <div class="title">skeb</div>
+      <div class="subtitle">有償リクエスト💌</div>
+    </div>
+  </a>
+
+  <a href="https://coconala.com/users/2508542" class="repuest-button" target="_blank">
+    <div class="icon-area">
+      <i class="fas fa-pencil-alt"></i>
+    </div>
+    <div class="text-area">
+      <div class="title">ココナラ</div>
+      <div class="subtitle">ご相談&依頼💌</div>
+    </div>
+  </a>
+
+</div>
+  
+
+
+  <!--JavaScript -->
+  <script>
+    //メイン綺羅星
+window.addEventListener("load", function () {
+    const charImg = document.querySelector(".character-img");
+    charImg.classList.add("visible");
+  });
+
+
+    //ご依頼
+    window.toggleRequestLinks = function() {
+  const links = document.querySelector('.request-links');
+  links.classList.toggle('active');
+  links.classList.remove('hidden');
+}
+
+    // menu開閉（アニメーション付き）
+
+  const menuButton = document.getElementById("menu-button");
+  const menuPanel = document.getElementById("menu-panel");
+
+    // 5回以上タップすると...//
+let clickCount = 0;
+  const character = document.getElementById("letter");
+
+  character.addEventListener("click", () => {
+    clickCount++;
+    if (clickCount >= 5) {
+      character.src = "images/letter-for-you--.png";
+    }
+  });
+
+  menuButton.addEventListener("click", () => {
+    if (menuPanel.classList.contains("show")) {
+      menuPanel.classList.remove("show");
+      setTimeout(() => {
+        menuPanel.style.display = "none";
+      }, 300);
+    } else {
+      menuPanel.style.display = "block";
+      setTimeout(() => {
+        menuPanel.classList.add("show");
+      }, 10);
+    }
+  });
+  </script>
+
+
+
+</body>
+</html>

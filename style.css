@@ -1,0 +1,428 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ccf0ff;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+  }
+
+main{
+  position: relative;
+  }
+
+  .character-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 8em auto 0; /* ← ここで上に50px余白を追加 */
+  }
+
+  .caption-container {
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: left;
+    max-width: 40%;
+  }
+  
+  .character-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .caption-overlay {
+    font-family: "vdl-megamaru", sans-serif;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #222959;
+    max-width: 40%;
+  }
+
+  .caption {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .caption2 {
+    font-size: 1em;
+    margin-top: 0.3em;
+  }
+  
+  @media (max-width: 768px) {
+    .caption-overlay {
+      top: auto;
+      bottom: 5%;
+      right: 5%;
+      left: 5%;
+      max-width: 90%;
+      font-size: 0.95em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .caption {
+      font-size: 2em;
+    }
+  
+    .caption2 {
+      font-size: 1.5em;
+    }
+  }
+
+  .rise-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: riseUp 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+    /* ここは出現アニメーションだけを管理 */
+  }
+  
+  @keyframes riseUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ロゴ */
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.logo img {
+  height: 120px;
+}
+
+
+/* ヘッダーのSNSボタンやメニュー */
+.header-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header-nav a {
+  font-size: 18px;
+  padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+  .header-nav a {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+}
+
+/* 動画全体ラッパー */
+.video-wrapper {
+  position: relative;
+  margin: 80px auto;
+  padding: 60px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  max-width: 960px;
+}
+
+
+/* レスポンシブな16:9動画 */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* タイトル */
+.video-title {
+  font-family: "vdl-megamaru", sans-serif;
+  font-size: 20px;
+  margin-top: 30px;
+  text-align: center;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .video-label {
+    font-size: 16px;
+    padding: 4px 10px;
+  }
+
+  .video-title {
+    font-size: 16px;
+  }
+}
+
+  
+  /* 右上にボタンを固定 */
+  #menu-button {
+    position: fixed;
+    top: 10px;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  #menu-button img {
+    width: 200%;
+    height: 300%;
+    object-fit: contain;
+  }
+  
+/* 画面幅が768px以上（タブレット・PCなど）のとき */
+@media screen and (min-width: 768px) {
+  #menu-button img {
+    width: 300%; /* 大きめサイズ */
+  }
+}
+
+  /* SNSリンク右側縦配置 */
+  a i {
+    font-size: 50px;
+    color: #ffffff;
+    margin: 10px 0;
+    transition: transform 0.2s, filter 0.2s;
+  }
+
+  .icon-combo {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+  }
+  
+  .icon-combo .pencil {
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  /* ホバー時（PC） */
+  a:hover i {
+  transform: scale(1.15);
+  filter: brightness(1.3); /* 少し明るく */
+  }
+
+/* アクティブ時（タップなど） */
+  a:active i {
+  transform: scale(0.9);
+  filter: brightness(0.8); /* 少し暗く */
+  }
+
+  .sns-links {
+    position: fixed;
+    right: 30px;
+    top: 40%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .repuest-button {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 36px;
+    padding: 12px;
+    margin: 10px 0;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    max-width: 360px;
+  }
+  
+  .repuest-button:hover {
+    transform: scale(1.02);
+  }
+  
+  .icon-area {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: #f3f3f3;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+  
+  .icon-area img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon-area i {
+    font-size: 24px;
+    color: #85baff;
+  }
+  
+  .text-area .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .text-area .subtitle {
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .repuest-button:hover {
+    transform: scale(1.02);
+    background-color: #ff69b4; /* 異なる背景に */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .repuest-button:hover .title {
+    color: #ffffff; /* タイトル文字の色を変更 */
+  }
+  
+  .repuest-button:hover .subtitle {
+    color: #ffffff; /* サブ文字も */
+  }
+
+/* お手紙アイコン */
+.request-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 1em;
+  height: auto;
+  cursor: pointer;
+  z-index: 1000;
+  animation: shake 2s ;
+}
+
+.request-toggle img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+/* 画面幅が768px以上（タブレット・PCなど）のとき */
+@media screen and (min-width: 768px) {
+  .request-toggle img {
+    width: 150px; /* 大きめサイズ */
+  }
+}
+
+ /* ホバー時（PC） */
+.request-toggle:hover img {
+  transform: scale(1.1);
+}
+
+ /* タップ時（スマホ） */
+.request-toggle:active img {
+  transform: scale(1.15);
+}
+
+/* お手紙がクリックされたらSkeb/ココナラが左側ににょっと表示 */
+.request-links {
+  position: fixed;
+  bottom: 80px;         
+  right: 10px;          
+  transform: translateX(0);  
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 998;
+}
+
+.request-links.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-100%); /* にょっと左に出す */
+}
+
+/* 最初非表示 */
+.hidden {
+  opacity: 0 + pointer-events none
+}
+
+/* ふるふるアニメーション */
+@keyframes shake {
+  0% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(0) rotate(5deg); }
+  50% { transform: translateX(0) rotate(-5deg); }
+  75% { transform: translateX(0) rotate(3deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+  
+  /* メニュー表示のアニメーション */
+  .hamburger {
+    width: 40px; /* お好みで */
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  /* ホバー時（PC） */
+  .hamburger:hover {
+    transform: scale(1.1);
+  }
+  
+  /* タップ時（スマホなど） */
+  .hamburger:active {
+    transform: scale(1.15);
+  }
+
+.menu-panel {
+    position: fixed;
+    top: 30%;
+    left: 83%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background-color: #fff;
+    border: 2px solid #ffb6c1;
+    border-radius: 60px;
+    padding: 40px 60px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-panel.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .menu-panel a {
+    font-family: "vdl-megamaru", sans-serif;
+    display: block;
+    margin: 18px 0;
+    color: #ff778b;
+    text-decoration: none;
+    font-size: 20px;
+  }
